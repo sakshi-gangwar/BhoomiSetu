@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | BhoomiSetu</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(
+                135deg,
+                #0d233a 0%,
+                #123c5a 50%,
+                #176b67 100%
+            );
+        }
+
+        .hero-pattern {
+            background-image:
+                radial-gradient(
+                    rgba(255,255,255,0.08) 1px,
+                    transparent 1px
+                );
+            background-size: 25px 25px;
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.10);
+        }
+
+        .step-line {
+            position: absolute;
+            top: 32px;
+            left: 16%;
+            right: 16%;
+            height: 2px;
+            background: #dbe4ea;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .step-line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="bg-[#0d233a] text-white shadow-lg sticky top-0 z-50">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="flex items-center justify-between h-16">
+
+            <!-- Logo -->
+            <a href="index2.html" class="flex items-center gap-3">
+
+                <div class="w-10 h-10 rounded-xl bg-white/10
+                            flex items-center justify-center">
+
+                    <i class="fa-solid fa-landmark text-xl"></i>
+
+                </div>
+
+                <div>
+                    <h1 class="font-bold text-lg leading-tight">
+                        BhoomiSetu
+                    </h1>
+
+                    <p class="text-[10px] text-slate-300">
+                        Intelligent Land Records
+                    </p>
+                </div>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
+            <div class="hidden md:flex items-center gap-1">
+
+                <a href="index2.html"
+                   class="px-4 py-2 rounded-lg text-sm
+                          hover:bg-white/10 transition">
+
+                    <i class="fa-solid fa-house mr-1"></i>
+                    Home
+
+                </a>
+
+                <a href="verification.html"
+                   class="px-4 py-2 rounded-lg text-sm
+                          hover:bg-white/10 transition">
+
+                    <i class="fa-solid fa-shield-halved mr-1"></i>
+                    Verification
+
+                </a>
+
+                <a href="records.html"
+                   class="px-4 py-2 rounded-lg text-sm
+                          hover:bg-white/10 transition">
+
+                    <i class="fa-solid fa-database mr-1"></i>
+                    Records
+
+                </a>
+
+                <a href="calculator.html"
+                   class="px-4 py-2 rounded-lg text-sm
+                          hover:bg-white/10 transition">
+
+                    <i class="fa-solid fa-calculator mr-1"></i>
+                    Calculators
+
+                </a>
+
+                <a href="map.html"
+                   class="px-4 py-2 rounded-lg text-sm
+                          hover:bg-white/10 transition">
+
+                    <i class="fa-solid fa-map mr-1"></i>
+                    Map
+
+                </a>
+
+                <a href="about.html"
+                   class="px-4 py-2 rounded-lg text-sm
+                          bg-white/15 font-semibold">
+
+                    <i class="fa-solid fa-circle-info mr-1"></i>
+                    About
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="gradient-bg hero-pattern text-white">
+
+    <div class="max-w-7xl mx-auto px-5 py-20">
+
+        <div class="max-w-4xl mx-auto text-center">
+
+            <div class="inline-flex items-center gap-2
+                        bg-white/10 border border-white/20
+                        px-4 py-2 rounded-full text-sm mb-6">
+
+                <i class="fa-solid fa-landmark"></i>
+
+                Digital Land Record Platform
+
+            </div>
+
+
+            <h1 class="text-4xl md:text-6xl font-extrabold
+                       tracking-tight mb-6">
+
+                About
+                <span class="text-emerald-300">
+                    BhoomiSetu
+                </span>
+
+            </h1>
+
+
+            <p class="text-lg md:text-xl text-slate-200
+                      leading-relaxed max-w-3xl mx-auto">
+
+                An intelligent land record digitization and
+                validation system designed to make land
+                information more organized, accessible and
+                reliable.
+
+            </p>
+
+
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+
+                <a href="verification.html"
+                   class="bg-white text-[#0d233a]
+                          px-6 py-3 rounded-xl font-semibold
+                          hover:bg-slate-100 transition">
+
+                    <i class="fa-solid fa-shield-check mr-2"></i>
+
+                    Verify a Record
+
+                </a>
+
+
+                <a href="records.html"
+                   class="border border-white/30
+                          px-6 py-3 rounded-xl
+                          font-semibold
+                          hover:bg-white/10 transition">
+
+                    <i class="fa-solid fa-database mr-2"></i>
+
+                    View Records
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECT OVERVIEW ================= -->
+
+<section class="py-16 bg-white">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- Left -->
+
+            <div>
+
+                <span class="text-emerald-600 font-semibold
+                             text-sm uppercase tracking-wider">
+
+                    Our Project
+
+                </span>
+
+
+                <h2 class="text-3xl md:text-4xl font-bold
+                           text-[#0d233a] mt-3 mb-6">
+
+                    Making Land Records
+                    <span class="text-emerald-600">
+                        Smarter
+                    </span>
+
+                </h2>
+
+
+                <p class="text-slate-600 leading-7 mb-5">
+
+                    BhoomiSetu is designed to provide a digital
+                    platform for managing and validating land
+                    records. It brings document processing,
+                    record validation, digital mapping and
+                    land calculations together in one place.
+
+                </p>
+
+
+                <p class="text-slate-600 leading-7">
+
+                    The system helps organize important land
+                    information such as owner details, Khasra
+                    numbers, land area and location information,
+                    while maintaining a digital record of
+                    validation results.
+
+                </p>
+
+
+                <div class="mt-8 grid grid-cols-2 gap-4">
+
+                    <div class="border rounded-xl p-4">
+
+                        <div class="text-2xl font-bold
+                                    text-[#0d233a]">
+
+                            Digital
+
+                        </div>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            Record Management
+                        </p>
+
+                    </div>
+
+
+                    <div class="border rounded-xl p-4">
+
+                        <div class="text-2xl font-bold
+                                    text-emerald-600">
+
+                            Intelligent
+
+                        </div>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            Validation Process
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Illustration -->
+
+            <div class="relative">
+
+                <div class="gradient-bg rounded-3xl p-8
+                            shadow-xl">
+
+                    <div class="bg-white/10 rounded-2xl
+                                border border-white/20
+                                p-8">
+
+                        <div class="grid grid-cols-2 gap-4">
+
+                            <div class="bg-white rounded-2xl
+                                        p-5 text-center">
+
+                                <div class="w-12 h-12 mx-auto
+                                            rounded-xl bg-blue-100
+                                            flex items-center
+                                            justify-center">
+
+                                    <i class="fa-solid fa-file-lines
+                                              text-blue-600 text-xl">
+                                    </i>
+
+                                </div>
+
+                                <p class="font-semibold mt-3
+                                          text-slate-800">
+
+                                    Documents
+
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+                                    Digital Records
+                                </p>
+
+                            </div>
+
+
+                            <div class="bg-white rounded-2xl
+                                        p-5 text-center">
+
+                                <div class="w-12 h-12 mx-auto
+                                            rounded-xl bg-emerald-100
+                                            flex items-center
+                                            justify-center">
+
+                                    <i class="fa-solid fa-circle-check
+                                              text-emerald-600 text-xl">
+                                    </i>
+
+                                </div>
+
+                                <p class="font-semibold mt-3
+                                          text-slate-800">
+
+                                    Validation
+
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+                                    Record Checking
+                                </p>
+
+                            </div>
+
+
+                            <div class="bg-white rounded-2xl
+                                        p-5 text-center">
+
+                                <div class="w-12 h-12 mx-auto
+                                            rounded-xl bg-purple-100
+                                            flex items-center
+                                            justify-center">
+
+                                    <i class="fa-solid fa-map
+                                              text-purple-600 text-xl">
+                                    </i>
+
+                                </div>
+
+                                <p class="font-semibold mt-3
+                                          text-slate-800">
+
+                                    Mapping
+
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+                                    Parcel Visualization
+                                </p>
+
+                            </div>
+
+
+                            <div class="bg-white rounded-2xl
+                                        p-5 text-center">
+
+                                <div class="w-12 h-12 mx-auto
+                                            rounded-xl bg-amber-100
+                                            flex items-center
+                                            justify-center">
+
+                                    <i class="fa-solid fa-calculator
+                                              text-amber-600 text-xl">
+                                    </i>
+
+                                </div>
+
+                                <p class="font-semibold mt-3
+                                          text-slate-800">
+
+                                    Calculators
+
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+                                    Area & Value
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="py-16 bg-slate-50">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="text-center max-w-2xl mx-auto mb-12">
+
+            <span class="text-emerald-600 font-semibold
+                         text-sm uppercase tracking-wider">
+
+                Core Features
+
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-bold
+                       text-[#0d233a] mt-3">
+
+                Everything in One Platform
+
+            </h2>
+
+            <p class="text-slate-500 mt-4">
+
+                BhoomiSetu combines essential land-record
+                operations into a simple digital workflow.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+            <!-- Card 1 -->
+
+            <div class="feature-card bg-white rounded-2xl
+                        border p-6">
+
+                <div class="w-14 h-14 rounded-xl
+                            bg-blue-100
+                            flex items-center justify-center
+                            mb-5">
+
+                    <i class="fa-solid fa-file-arrow-up
+                              text-blue-600 text-2xl">
+                    </i>
+
+                </div>
+
+                <h3 class="text-lg font-bold
+                           text-[#0d233a] mb-3">
+
+                    Document Digitization
+
+                </h3>
+
+                <p class="text-sm text-slate-500 leading-6">
+
+                    Upload and store land documents digitally
+                    for easier record management and processing.
+
+                </p>
+
+            </div>
+
+
+            <!-- Card 2 -->
+
+            <div class="feature-card bg-white rounded-2xl
+                        border p-6">
+
+                <div class="w-14 h-14 rounded-xl
+                            bg-emerald-100
+                            flex items-center justify-center
+                            mb-5">
+
+                    <i class="fa-solid fa-shield-halved
+                              text-emerald-600 text-2xl">
+                    </i>
+
+                </div>
+
+                <h3 class="text-lg font-bold
+                           text-[#0d233a] mb-3">
+
+                    Record Validation
+
+                </h3>
+
+                <p class="text-sm text-slate-500 leading-6">
+
+                    Check owner, Khasra, area and location
+                    information and identify problematic records.
+
+                </p>
+
+            </div>
+
+
+            <!-- Card 3 -->
+
+            <div class="feature-card bg-white rounded-2xl
+                        border p-6">
+
+                <div class="w-14 h-14 rounded-xl
+                            bg-purple-100
+                            flex items-center justify-center
+                            mb-5">
+
+                    <i class="fa-solid fa-map-location-dot
+                              text-purple-600 text-2xl">
+                    </i>
+
+                </div>
+
+                <h3 class="text-lg font-bold
+                           text-[#0d233a] mb-3">
+
+                    Cadastral Mapping
+
+                </h3>
+
+                <p class="text-sm text-slate-500 leading-6">
+
+                    Visualize land parcels on an interactive
+                    digital map interface.
+
+                </p>
+
+            </div>
+
+
+            <!-- Card 4 -->
+
+            <div class="feature-card bg-white rounded-2xl
+                        border p-6">
+
+                <div class="w-14 h-14 rounded-xl
+                            bg-amber-100
+                            flex items-center justify-center
+                            mb-5">
+
+                    <i class="fa-solid fa-calculator
+                              text-amber-600 text-2xl">
+                    </i>
+
+                </div>
+
+                <h3 class="text-lg font-bold
+                           text-[#0d233a] mb-3">
+
+                    Land Calculators
+
+                </h3>
+
+                <p class="text-sm text-slate-500 leading-6">
+
+                    Calculate land area, convert units and
+                    estimate land values through digital tools.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="py-16 bg-white">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="text-center mb-14">
+
+            <span class="text-emerald-600 font-semibold
+                         text-sm uppercase tracking-wider">
+
+                Workflow
+
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-bold
+                       text-[#0d233a] mt-3">
+
+                How BhoomiSetu Works
+
+            </h2>
+
+        </div>
+
+
+        <div class="relative">
+
+            <div class="step-line"></div>
+
+
+            <div class="grid md:grid-cols-4 gap-8
+                        relative z-10">
+
+
+                <!-- Step 1 -->
+
+                <div class="text-center">
+
+                    <div class="w-16 h-16 mx-auto rounded-full
+                                bg-[#0d233a] text-white
+                                flex items-center justify-center
+                                text-xl font-bold
+                                border-4 border-white
+                                shadow-lg">
+
+                        1
+
+                    </div>
+
+                    <h3 class="font-bold text-lg mt-5">
+
+                        Upload
+
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-2">
+
+                        Upload the land document and enter
+                        basic record information.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Step 2 -->
+
+                <div class="text-center">
+
+                    <div class="w-16 h-16 mx-auto rounded-full
+                                bg-[#0d233a] text-white
+                                flex items-center justify-center
+                                text-xl font-bold
+                                border-4 border-white
+                                shadow-lg">
+
+                        2
+
+                    </div>
+
+                    <h3 class="font-bold text-lg mt-5">
+
+                        Validate
+
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-2">
+
+                        The backend checks the submitted
+                        record information.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Step 3 -->
+
+                <div class="text-center">
+
+                    <div class="w-16 h-16 mx-auto rounded-full
+                                bg-[#0d233a] text-white
+                                flex items-center justify-center
+                                text-xl font-bold
+                                border-4 border-white
+                                shadow-lg">
+
+                        3
+
+                    </div>
+
+                    <h3 class="font-bold text-lg mt-5">
+
+                        Store
+
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-2">
+
+                        Validation results and record details
+                        are stored digitally.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Step 4 -->
+
+                <div class="text-center">
+
+                    <div class="w-16 h-16 mx-auto rounded-full
+                                bg-[#0d233a] text-white
+                                flex items-center justify-center
+                                text-xl font-bold
+                                border-4 border-white
+                                shadow-lg">
+
+                        4
+
+                    </div>
+
+                    <h3 class="font-bold text-lg mt-5">
+
+                        Visualize
+
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-2">
+
+                        View records and parcel information
+                        through the digital dashboard.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TECHNOLOGY ================= -->
+
+<section class="py-16 bg-slate-50">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="max-w-3xl mx-auto text-center">
+
+            <span class="text-emerald-600 font-semibold
+                         text-sm uppercase tracking-wider">
+
+                Technology
+
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-bold
+                       text-[#0d233a] mt-3 mb-5">
+
+                Built With Modern Web Technologies
+
+            </h2>
+
+            <p class="text-slate-500 leading-7">
+
+                BhoomiSetu uses a lightweight web architecture
+                to provide a practical foundation for digital
+                land-record management and validation.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4
+                    gap-5 mt-10">
+
+
+            <div class="bg-white border rounded-2xl p-6
+                        text-center">
+
+                <i class="fa-brands fa-html5
+                          text-4xl mb-3">
+                </i>
+
+                <h3 class="font-bold">
+                    HTML5
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    User Interface
+                </p>
+
+            </div>
+
+
+            <div class="bg-white border rounded-2xl p-6
+                        text-center">
+
+                <i class="fa-brands fa-js
+                          text-4xl mb-3">
+                </i>
+
+                <h3 class="font-bold">
+                    JavaScript
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Frontend Logic
+                </p>
+
+            </div>
+
+
+            <div class="bg-white border rounded-2xl p-6
+                        text-center">
+
+                <i class="fa-brands fa-python
+                          text-4xl mb-3">
+                </i>
+
+                <h3 class="font-bold">
+                    Python
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Backend API
+                </p>
+
+            </div>
+
+
+            <div class="bg-white border rounded-2xl p-6
+                        text-center">
+
+                <i class="fa-solid fa-database
+                          text-4xl mb-3">
+                </i>
+
+                <h3 class="font-bold">
+                    SQLite
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Data Storage
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="gradient-bg text-white">
+
+    <div class="max-w-5xl mx-auto px-5 py-16 text-center">
+
+        <div class="w-16 h-16 mx-auto rounded-2xl
+                    bg-white/10 flex items-center
+                    justify-center mb-6">
+
+            <i class="fa-solid fa-landmark text-3xl"></i>
+
+        </div>
+
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+
+            Ready to Manage Land Records Digitally?
+
+        </h2>
+
+
+        <p class="text-slate-200 max-w-2xl mx-auto mb-8">
+
+            Use BhoomiSetu to upload, validate, manage and
+            visualize land-record information through one
+            digital platform.
+
+        </p>
+
+
+        <div class="flex flex-wrap justify-center gap-4">
+
+            <a href="verification.html"
+               class="bg-white text-[#0d233a]
+                      px-7 py-3 rounded-xl
+                      font-semibold
+                      hover:bg-slate-100 transition">
+
+                <i class="fa-solid fa-upload mr-2"></i>
+
+                Start Verification
+
+            </a>
+
+
+            <a href="map.html"
+               class="border border-white/30
+                      px-7 py-3 rounded-xl
+                      font-semibold
+                      hover:bg-white/10 transition">
+
+                <i class="fa-solid fa-map mr-2"></i>
+
+                Explore Map
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#081827] text-slate-300">
+
+    <div class="max-w-7xl mx-auto px-5 py-10">
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+
+            <!-- Brand -->
+
+            <div>
+
+                <div class="flex items-center gap-3 mb-4">
+
+                    <div class="w-10 h-10 rounded-xl
+                                bg-white/10
+                                flex items-center justify-center">
+
+                        <i class="fa-solid fa-landmark"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="font-bold text-white">
+                            BhoomiSetu
+                        </h3>
+
+                        <p class="text-xs">
+                            Intelligent Land Records
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-sm leading-6 text-slate-400">
+
+                    A digital platform for intelligent land
+                    record digitization, validation and
+                    visualization.
+
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+
+            <div>
+
+                <h3 class="font-semibold text-white mb-4">
+                    Quick Links
+                </h3>
+
+                <div class="space-y-2 text-sm">
+
+                    <a href="index2.html"
+                       class="block hover:text-white transition">
+                        Home
+                    </a>
+
+                    <a href="verification.html"
+                       class="block hover:text-white transition">
+                        Verification
+                    </a>
+
+                    <a href="records.html"
+                       class="block hover:text-white transition">
+                        Records
+                    </a>
+
+                    <a href="calculator.html"
+                       class="block hover:text-white transition">
+                        Calculators
+                    </a>
+
+                    <a href="map.html"
+                       class="block hover:text-white transition">
+                        Map
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project -->
+
+            <div>
+
+                <h3 class="font-semibold text-white mb-4">
+                    Project
+                </h3>
+
+                <p class="text-sm text-slate-400 leading-6">
+
+                    Intelligent Land Record Digitization and
+                    Validation System
+
+                </p>
+
+
+                <div class="mt-4 flex gap-3">
+
+                    <div class="px-3 py-2 rounded-lg
+                                bg-white/5 text-xs">
+
+                        FastAPI
+
+                    </div>
+
+                    <div class="px-3 py-2 rounded-lg
+                                bg-white/5 text-xs">
+
+                        SQLite
+
+                    </div>
+
+                    <div class="px-3 py-2 rounded-lg
+                                bg-white/5 text-xs">
+
+                        Leaflet
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="border-t border-white/10 mt-8 pt-6
+                    flex flex-col md:flex-row
+                    justify-between gap-3
+                    text-xs text-slate-500">
+
+            <p>
+                © 2026 BhoomiSetu. All rights reserved.
+            </p>
+
+            <p>
+                Intelligent Land Record Digitization &
+                Validation System
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>

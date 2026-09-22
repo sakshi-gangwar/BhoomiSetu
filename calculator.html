@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Land Calculators | BhoomiSetu</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        rel="stylesheet">
+        <a href="index2.html"
+   class="px-4 py-2 rounded hover:bg-white/10 text-sm">
+    <i class="fa-solid fa-house mr-1"></i>
+    Home
+    </a>
+
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+<!-- TOP BAR -->
+
+<div class="bg-slate-900 text-slate-300 text-xs py-2 px-6">
+
+    <div class="max-w-7xl mx-auto flex justify-between">
+
+        <span>GOVERNMENT LAND RECORD PORTAL</span>
+
+        <span>
+            Digital Land Services
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="bg-white shadow-sm">
+
+    <div class="max-w-7xl mx-auto px-6 py-4">
+
+        <div class="flex items-center gap-4">
+
+            <div class="text-4xl text-[#113355]">
+                <i class="fa-solid fa-landmark"></i>
+            </div>
+
+            <div>
+
+                <h1 class="text-2xl font-bold text-[#0d233a]">
+                    Integrated Land Record System
+                </h1>
+
+                <p class="text-sm text-emerald-700">
+                    Land Calculation & Conversion Services
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVBAR -->
+
+<nav class="bg-[#0d233a] text-white">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="flex flex-wrap gap-1 py-2">
+
+            <a href="index2.html"
+               class="px-4 py-2 hover:bg-white/10 rounded">
+                Home
+            </a>
+
+            <a href="verification.html"
+               class="px-4 py-2 hover:bg-white/10 rounded">
+                Verification
+            </a>
+
+            <a href="records.html"
+               class="px-4 py-2 hover:bg-white/10 rounded">
+                Records
+            </a>
+
+            <a href="calculator.html"
+               class="px-4 py-2 bg-white/20 rounded">
+                Calculators
+            </a>
+
+            <a href="map.html"
+               class="px-4 py-2 hover:bg-white/10 rounded">
+                Map
+            </a>
+
+            <a href="about.html"
+               class="px-4 py-2 hover:bg-white/10 rounded">
+                About
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- PAGE -->
+
+<main class="max-w-7xl mx-auto px-6 py-10">
+
+    <div class="mb-8">
+
+        <h2 class="text-3xl font-bold text-[#0d233a]">
+            Land Calculators
+        </h2>
+
+        <p class="text-slate-500 mt-2">
+            Calculate land area, convert land units and estimate land value.
+        </p>
+
+    </div>
+
+
+    <!-- CALCULATOR GRID -->
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+
+        <!-- AREA -->
+
+        <div class="bg-white rounded-xl shadow-sm border p-6">
+
+            <div class="text-emerald-700 text-3xl mb-4">
+                <i class="fa-solid fa-ruler-combined"></i>
+            </div>
+
+            <h3 class="text-xl font-bold mb-5">
+                Area Calculator
+            </h3>
+
+            <label class="text-sm font-medium">
+                Length
+            </label>
+
+            <input
+                id="length"
+                type="number"
+                class="w-full border rounded-lg p-2 mt-1 mb-4"
+                placeholder="Enter length">
+
+
+            <label class="text-sm font-medium">
+                Width
+            </label>
+
+            <input
+                id="width"
+                type="number"
+                class="w-full border rounded-lg p-2 mt-1 mb-4"
+                placeholder="Enter width">
+
+
+            <label class="text-sm font-medium">
+                Unit
+            </label>
+
+            <select
+                id="areaUnit"
+                class="w-full border rounded-lg p-2 mt-1">
+
+                <option value="sqft">
+                    Square Feet
+                </option>
+
+                <option value="sqm">
+                    Square Meter
+                </option>
+
+            </select>
+
+
+            <button
+                onclick="calculateArea()"
+                class="w-full bg-[#113355] text-white py-2.5 rounded-lg mt-5">
+
+                Calculate Area
+
+            </button>
+
+
+            <div
+                id="areaResult"
+                class="mt-5 bg-slate-100 rounded-lg p-4">
+            </div>
+
+        </div>
+
+
+
+        <!-- UNIT CONVERTER -->
+
+        <div class="bg-white rounded-xl shadow-sm border p-6">
+
+            <div class="text-blue-700 text-3xl mb-4">
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+
+            <h3 class="text-xl font-bold mb-5">
+                Unit Converter
+            </h3>
+
+
+            <input
+                id="convertValue"
+                type="number"
+                class="w-full border rounded-lg p-2 mb-4"
+                placeholder="Enter value">
+
+
+            <label class="text-sm font-medium">
+                From
+            </label>
+
+            <select
+                id="fromUnit"
+                class="w-full border rounded-lg p-2 mt-1 mb-4">
+
+                <option value="sqft">
+                    Square Feet
+                </option>
+
+                <option value="sqm">
+                    Square Meter
+                </option>
+
+                <option value="acre">
+                    Acre
+                </option>
+
+                <option value="hectare">
+                    Hectare
+                </option>
+
+            </select>
+
+
+            <label class="text-sm font-medium">
+                To
+            </label>
+
+            <select
+                id="toUnit"
+                class="w-full border rounded-lg p-2 mt-1">
+
+                <option value="sqft">
+                    Square Feet
+                </option>
+
+                <option value="sqm">
+                    Square Meter
+                </option>
+
+                <option value="acre">
+                    Acre
+                </option>
+
+                <option value="hectare">
+                    Hectare
+                </option>
+
+            </select>
+
+
+            <button
+                onclick="convertLandUnit()"
+                class="w-full bg-emerald-700 text-white py-2.5 rounded-lg mt-5">
+
+                Convert
+
+            </button>
+
+
+            <div
+                id="conversionResult"
+                class="mt-5 bg-slate-100 rounded-lg p-4">
+            </div>
+
+        </div>
+
+
+
+        <!-- LAND VALUE -->
+
+        <div class="bg-white rounded-xl shadow-sm border p-6">
+
+            <div class="text-amber-600 text-3xl mb-4">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>
+
+            <h3 class="text-xl font-bold mb-5">
+                Land Value Calculator
+            </h3>
+
+
+            <label class="text-sm font-medium">
+                Land Area (Acres)
+            </label>
+
+            <input
+                id="landArea"
+                type="number"
+                class="w-full border rounded-lg p-2 mt-1 mb-4"
+                placeholder="Example: 2.5">
+
+
+            <label class="text-sm font-medium">
+                Rate per Acre (₹)
+            </label>
+
+            <input
+                id="ratePerAcre"
+                type="number"
+                class="w-full border rounded-lg p-2 mt-1">
+
+
+            <button
+                onclick="calculateLandValue()"
+                class="w-full bg-amber-600 text-white py-2.5 rounded-lg mt-5">
+
+                Calculate Value
+
+            </button>
+
+
+            <div
+                id="landValueResult"
+                class="mt-5 bg-slate-100 rounded-lg p-4">
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="bg-[#0b1b2b] text-slate-400 mt-10">
+
+    <div class="max-w-7xl mx-auto px-6 py-6 text-center">
+
+        <p>
+            Integrated Land Record Digitization System
+        </p>
+
+        <p class="text-xs mt-1">
+            Smart Land Record Modernization Platform
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function calculateArea() {
+
+    const length =
+        Number(document.getElementById("length").value);
+
+    const width =
+        Number(document.getElementById("width").value);
+
+    const unit =
+        document.getElementById("areaUnit").value;
+
+
+    if (length <= 0 || width <= 0) {
+
+        document.getElementById("areaResult").innerHTML =
+            "Please enter valid values.";
+
+        return;
+    }
+
+
+    const area = length * width;
+
+
+    if (unit === "sqft") {
+
+        document.getElementById("areaResult").innerHTML = `
+            <strong>Area:</strong>
+            ${area.toFixed(2)} sq ft
+            <br><br>
+            <strong>Acres:</strong>
+            ${(area / 43560).toFixed(4)}
+        `;
+
+    } else {
+
+        document.getElementById("areaResult").innerHTML = `
+            <strong>Area:</strong>
+            ${area.toFixed(2)} sq m
+            <br><br>
+            <strong>Acres:</strong>
+            ${(area / 4046.856).toFixed(4)}
+        `;
+    }
+
+}
+
+
+
+function convertLandUnit() {
+
+    const value =
+        Number(document.getElementById("convertValue").value);
+
+    const from =
+        document.getElementById("fromUnit").value;
+
+    const to =
+        document.getElementById("toUnit").value;
+
+
+    if (value <= 0) {
+
+        document.getElementById("conversionResult").innerText =
+            "Please enter a valid value.";
+
+        return;
+    }
+
+
+    const rates = {
+
+        sqft: 1,
+
+        sqm: 10.7639104167,
+
+        acre: 43560,
+
+        hectare: 107639.104167
+
+    };
+
+
+    const squareFeet =
+        value * rates[from];
+
+    const result =
+        squareFeet / rates[to];
+
+
+    document.getElementById("conversionResult").innerHTML = `
+
+        ${value} ${from}
+
+        <br>
+
+        =
+
+        <strong>
+            ${result.toFixed(4)} ${to}
+        </strong>
+
+    `;
+
+}
+
+
+
+function calculateLandValue() {
+
+    const area =
+        Number(document.getElementById("landArea").value);
+
+    const rate =
+        Number(document.getElementById("ratePerAcre").value);
+
+
+    if (area <= 0 || rate <= 0) {
+
+        document.getElementById("landValueResult").innerText =
+            "Please enter valid values.";
+
+        return;
+    }
+
+
+    const value = area * rate;
+
+
+    document.getElementById("landValueResult").innerHTML = `
+
+        Estimated Land Value
+
+        <br>
+
+        <span class="text-2xl text-emerald-700">
+
+            ₹${value.toLocaleString("en-IN")}
+
+        </span>
+
+    `;
+
+}
+
+</script>
+
+</body>
+</html>
+

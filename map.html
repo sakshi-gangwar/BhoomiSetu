@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastral Map | BhoomiSetu</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Leaflet Map -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <style>
+        .tricolor-bar {
+            height: 4px;
+            background: linear-gradient(
+                90deg,
+                #FF9933 33.33%,
+                #FFFFFF 33.33%,
+                #FFFFFF 66.66%,
+                #138808 66.66%
+            );
+        }
+
+        #map {
+            height: 520px;
+            width: 100%;
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        .map-placeholder {
+            min-height: 520px;
+        }
+    </style>
+</head>
+
+
+<body class="bg-slate-100 text-slate-800 min-h-screen">
+
+
+    <!-- ================= TOP BAR ================= -->
+
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4">
+
+        <div class="max-w-7xl mx-auto flex justify-between">
+
+            <div>
+                GOVERNMENT LAND RECORD PORTAL
+            </div>
+
+            <div>
+                Digital Land Services
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="bg-white shadow-sm">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+
+            <div class="flex items-center justify-between">
+
+                <div class="flex items-center gap-4">
+
+                    <div class="text-4xl text-[#113355]">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+
+                    <div>
+
+                        <p class="text-xs uppercase tracking-widest
+                        text-slate-500 font-semibold">
+
+                            Department of Land Resources
+
+                        </p>
+
+                        <h1 class="text-xl sm:text-2xl font-bold
+                        text-[#0d233a]">
+
+                            Integrated Land Record Digitization System
+
+                        </h1>
+
+                        <p class="text-xs text-emerald-700">
+
+                            Automated Deed Verification & Cadastral Mapping Engine
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hidden md:block">
+
+                    <span class="px-3 py-2 bg-emerald-50
+                    border border-emerald-200
+                    text-emerald-700 rounded-lg text-xs font-semibold">
+
+                        <i class="fa-solid fa-shield-halved mr-1"></i>
+
+                        SECURE MAPPING NODE
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tricolor-bar"></div>
+
+    </header>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="bg-[#0d233a] text-white shadow-md">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div class="flex flex-wrap items-center gap-1 py-2">
+
+
+                <!-- HOME -->
+
+                <a
+                    href="index2.html"
+                    class="px-4 py-2 rounded hover:bg-white/10 text-sm">
+
+                    <i class="fa-solid fa-house mr-1"></i>
+
+                    Home
+
+                </a>
+
+
+                <!-- VERIFICATION -->
+
+                <a
+                    href="verification.html"
+                    class="px-4 py-2 rounded hover:bg-white/10 text-sm">
+
+                    <i class="fa-solid fa-shield-halved mr-1"></i>
+
+                    Verification
+
+                </a>
+
+
+                <!-- RECORDS -->
+
+                <a
+                    href="records.html"
+                    class="px-4 py-2 rounded hover:bg-white/10 text-sm">
+
+                    <i class="fa-solid fa-table-list mr-1"></i>
+
+                    Land Records
+
+                </a>
+
+
+                <!-- CALCULATOR -->
+
+                <a
+                    href="calculator.html"
+                    class="px-4 py-2 rounded hover:bg-white/10 text-sm">
+
+                    <i class="fa-solid fa-calculator mr-1"></i>
+
+                    Calculators
+
+                </a>
+
+
+                <!-- MAP -->
+
+                <a
+                    href="map.html"
+                    class="px-4 py-2 rounded bg-white/20 text-sm">
+
+                    <i class="fa-solid fa-map mr-1"></i>
+
+                    Cadastral Map
+
+                </a>
+
+
+                <!-- ABOUT -->
+
+                <a
+                    href="about.html"
+                    class="px-4 py-2 rounded hover:bg-white/10 text-sm">
+
+                    <i class="fa-solid fa-circle-info mr-1"></i>
+
+                    About
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="mb-8">
+
+            <div class="inline-flex items-center
+            bg-blue-100 text-blue-700
+            px-3 py-1 rounded-full text-xs font-semibold mb-3">
+
+                <i class="fa-solid fa-map-location-dot mr-2"></i>
+
+                CADASTRAL MAPPING
+
+            </div>
+
+
+            <h2 class="text-3xl font-bold text-[#0d233a]">
+
+                Cadastral Land Map
+
+            </h2>
+
+
+            <p class="text-slate-500 mt-2 max-w-3xl">
+
+                Visualize land parcels, cadastral boundaries and
+                location information through the BhoomiSetu mapping interface.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= MAP + INFORMATION ================= -->
+
+        <div class="grid lg:grid-cols-3 gap-7">
+
+
+            <!-- MAP -->
+
+            <div class="lg:col-span-2">
+
+                <div class="bg-white rounded-xl shadow-sm
+                border border-slate-200 overflow-hidden">
+
+
+                    <div class="bg-slate-50 border-b
+                    border-slate-200 px-6 py-4">
+
+                        <div class="flex items-center justify-between">
+
+                            <div>
+
+                                <h3 class="font-bold text-[#0d233a]">
+
+                                    <i class="fa-solid fa-map mr-2
+                                    text-blue-700"></i>
+
+                                    Interactive Cadastral Map
+
+                                </h3>
+
+                                <p class="text-xs text-slate-500 mt-1">
+
+                                    Select a location to explore parcel information.
+
+                                </p>
+
+                            </div>
+
+                            <span class="text-xs bg-emerald-100
+                            text-emerald-700 px-3 py-1 rounded-full">
+
+                                Map Active
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="p-4">
+
+                        <div id="map"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INFORMATION CARD -->
+
+            <div>
+
+                <div class="bg-white rounded-xl shadow-sm
+                border border-slate-200 p-6">
+
+
+                    <h3 class="font-bold text-[#0d233a] mb-5">
+
+                        <i class="fa-solid fa-location-dot
+                        text-emerald-700 mr-2"></i>
+
+                        Parcel Information
+
+                    </h3>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="mb-5">
+
+                        <label class="block text-xs
+                        font-semibold text-slate-500 mb-1">
+
+                            Selected Location
+
+                        </label>
+
+                        <p
+                            id="locationText"
+                            class="font-semibold text-slate-800">
+
+                            Click on the map
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- LATITUDE -->
+
+                    <div class="mb-5">
+
+                        <label class="block text-xs
+                        font-semibold text-slate-500 mb-1">
+
+                            Latitude
+
+                        </label>
+
+                        <p
+                            id="latitude"
+                            class="font-mono text-sm text-slate-700">
+
+                            --
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- LONGITUDE -->
+
+                    <div class="mb-5">
+
+                        <label class="block text-xs
+                        font-semibold text-slate-500 mb-1">
+
+                            Longitude
+
+                        </label>
+
+                        <p
+                            id="longitude"
+                            class="font-mono text-sm text-slate-700">
+
+                            --
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- PARCEL -->
+
+                    <div class="mb-5">
+
+                        <label class="block text-xs
+                        font-semibold text-slate-500 mb-1">
+
+                            Parcel / Khasra
+
+                        </label>
+
+                        <p
+                            id="parcel"
+                            class="font-semibold text-slate-800">
+
+                            Not selected
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    <div>
+
+                        <label class="block text-xs
+                        font-semibold text-slate-500 mb-2">
+
+                            Mapping Status
+
+                        </label>
+
+                        <span
+                            class="inline-flex items-center
+                            bg-emerald-50
+                            text-emerald-700
+                            border border-emerald-200
+                            px-3 py-2 rounded-lg text-xs font-semibold">
+
+                            <i class="fa-solid fa-circle-check mr-2"></i>
+
+                            Cadastral Layer Available
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FEATURES CARD -->
+
+                <div class="bg-white rounded-xl shadow-sm
+                border border-slate-200 p-6 mt-6">
+
+                    <h3 class="font-bold text-[#0d233a] mb-4">
+
+                        Mapping Features
+
+                    </h3>
+
+
+                    <div class="space-y-4">
+
+
+                        <div class="flex items-center gap-3">
+
+                            <div
+                                class="w-9 h-9 rounded-full
+                                bg-blue-100 text-blue-700
+                                flex items-center justify-center">
+
+                                <i class="fa-solid fa-draw-polygon"></i>
+
+                            </div>
+
+                            <div>
+
+                                <p class="text-sm font-semibold">
+
+                                    Parcel Boundaries
+
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+
+                                    Visual land parcel representation
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="flex items-center gap-3">
+
+                            <div
+                                class="w-9 h-9 rounded-full
+                                bg-emerald-100 text-emerald-700
+                                flex items-center justify-center">
+
+                                <i class="fa-solid fa-location-crosshairs"></i>
+
+                            </div>
+
+                            <div>
+
+                                <p class="text-sm font-semibold">
+
+                                    Location Mapping
+
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+
+                                    Geographic coordinates
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="flex items-center gap-3">
+
+                            <div
+                                class="w-9 h-9 rounded-full
+                                bg-purple-100 text-purple-700
+                                flex items-center justify-center">
+
+                                <i class="fa-solid fa-database"></i>
+
+                            </div>
+
+                            <div>
+
+                                <p class="text-sm font-semibold">
+
+                                    Digital Land Data
+
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+
+                                    Structured cadastral information
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= SEARCH / DEMO CARD ================= -->
+
+        <div class="bg-white rounded-xl shadow-sm
+        border border-slate-200 mt-8 p-6">
+
+
+            <div class="grid md:grid-cols-3 gap-5 items-end">
+
+
+                <div>
+
+                    <label
+                        class="block text-sm font-semibold mb-2">
+
+                        Khasra / Survey Number
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="khasraInput"
+                        placeholder="Example: 402/1B"
+                        class="w-full border border-slate-300
+                        rounded-lg px-4 py-2.5
+                        focus:outline-none
+                        focus:ring-2 focus:ring-blue-200"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label
+                        class="block text-sm font-semibold mb-2">
+
+                        Village
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="villageInput"
+                        placeholder="Example: Rampur"
+                        class="w-full border border-slate-300
+                        rounded-lg px-4 py-2.5
+                        focus:outline-none
+                        focus:ring-2 focus:ring-blue-200"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    onclick="searchParcel()"
+                    class="bg-[#113355]
+                    hover:bg-[#184570]
+                    text-white font-semibold
+                    py-3 rounded-lg
+                    transition">
+
+                    <i class="fa-solid fa-magnifying-glass mr-2"></i>
+
+                    Search Parcel
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="bg-[#0b1b2b] text-slate-400 mt-10">
+
+        <div class="max-w-7xl mx-auto px-6 py-6 text-center">
+
+            <p class="text-slate-200 font-semibold">
+
+                Integrated Land Record Digitization System
+
+            </p>
+
+            <p class="text-xs mt-1">
+
+                Smart Land Record Modernization Platform
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /*
+        ==========================================
+        INITIALIZE MAP
+        ==========================================
+        */
+
+        const map = L.map("map").setView(
+            [28.6139, 77.2090],
+            10
+        );
+
+
+        /*
+        ==========================================
+        OPEN STREET MAP TILE LAYER
+        ==========================================
+        */
+
+        L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+                maxZoom: 19,
+                attribution:
+                    '&copy; OpenStreetMap contributors'
+            }
+        ).addTo(map);
+
+
+        /*
+        ==========================================
+        DEMO LAND PARCELS
+        ==========================================
+        */
+
+        const parcel1 = [
+            [28.6200, 77.1950],
+            [28.6250, 77.2050],
+            [28.6180, 77.2150],
+            [28.6120, 77.2050]
+        ];
+
+
+        const parcel2 = [
+            [28.6250, 77.2050],
+            [28.6320, 77.2150],
+            [28.6250, 77.2250],
+            [28.6180, 77.2150]
+        ];
+
+
+        const parcel3 = [
+            [28.6120, 77.2050],
+            [28.6180, 77.2150],
+            [28.6080, 77.2220],
+            [28.6020, 77.2120]
+        ];
+
+
+        /*
+        ==========================================
+        ADD PARCEL POLYGONS
+        ==========================================
+        */
+
+        const polygon1 = L.polygon(
+            parcel1,
+            {
+                color: "#113355",
+                weight: 2,
+                fillOpacity: 0.25
+            }
+        ).addTo(map);
+
+
+        const polygon2 = L.polygon(
+            parcel2,
+            {
+                color: "#138808",
+                weight: 2,
+                fillOpacity: 0.25
+            }
+        ).addTo(map);
+
+
+        const polygon3 = L.polygon(
+            parcel3,
+            {
+                color: "#FF9933",
+                weight: 2,
+                fillOpacity: 0.25
+            }
+        ).addTo(map);
+
+
+        /*
+        ==========================================
+        PARCEL POPUPS
+        ==========================================
+        */
+
+        polygon1.bindPopup(
+            "<b>Parcel Information</b><br>" +
+            "Khasra No: 402/1B<br>" +
+            "Area: 3.45 Acres<br>" +
+            "Village: Rampur<br>" +
+            "Status: VALIDATED"
+        );
+
+
+        polygon2.bindPopup(
+            "<b>Parcel Information</b><br>" +
+            "Khasra No: 403/2A<br>" +
+            "Area: 2.80 Acres<br>" +
+            "Village: Rampur<br>" +
+            "Status: VALIDATED"
+        );
+
+
+        polygon3.bindPopup(
+            "<b>Parcel Information</b><br>" +
+            "Khasra No: 404/3C<br>" +
+            "Area: 4.10 Acres<br>" +
+            "Village: Rampur<br>" +
+            "Status: REVIEW REQUIRED"
+        );
+
+
+        /*
+        ==========================================
+        MAP CLICK
+        ==========================================
+        */
+
+        map.on("click", function(e) {
+
+            const lat =
+                e.latlng.lat.toFixed(6);
+
+            const lng =
+                e.latlng.lng.toFixed(6);
+
+
+            document.getElementById(
+                "latitude"
+            ).innerText = lat;
+
+
+            document.getElementById(
+                "longitude"
+            ).innerText = lng;
+
+
+            document.getElementById(
+                "locationText"
+            ).innerText =
+                "Selected map location";
+
+
+            document.getElementById(
+                "parcel"
+            ).innerText =
+                "Parcel location selected";
+
+
+            L.popup()
+                .setLatLng(e.latlng)
+                .setContent(
+                    "<b>Selected Location</b><br>" +
+                    "Latitude: " + lat + "<br>" +
+                    "Longitude: " + lng
+                )
+                .openOn(map);
+
+        });
+
+
+        /*
+        ==========================================
+        SEARCH PARCEL
+        ==========================================
+        */
+
+        function searchParcel() {
+
+            const khasra =
+                document.getElementById(
+                    "khasraInput"
+                ).value.trim();
+
+
+            const village =
+                document.getElementById(
+                    "villageInput"
+                ).value.trim();
+
+
+            if (!khasra && !village) {
+
+                alert(
+                    "Please enter Khasra Number or Village."
+                );
+
+                return;
+
+            }
+
+
+            document.getElementById(
+                "parcel"
+            ).innerText =
+                khasra || "Demo Parcel";
+
+
+            document.getElementById(
+                "locationText"
+            ).innerText =
+                village || "Selected Village";
+
+
+            map.fitBounds(
+                polygon1.getBounds()
+            );
+
+
+            polygon1.openPopup();
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

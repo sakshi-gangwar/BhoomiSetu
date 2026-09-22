@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        National Land Record Modernization & Verification Portal
+    </title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef3f8;
+        }
+
+        .gov-blue {
+            background: #071a2f;
+        }
+
+        .hero-bg {
+            background:
+                linear-gradient(
+                    rgba(20, 52, 82, 0.85),
+                    rgba(72, 106, 138, 0.80)
+                ),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .orange-line {
+            height: 4px;
+            background: #ff8c00;
+        }
+
+        .green-line {
+            height: 4px;
+            background: #138808;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #dbe3eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        input {
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37,99,235,.10);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     GOVERNMENT TOP BAR
+===================================================== -->
+
+<div class="gov-blue text-white text-xs">
+
+    <div class="max-w-[1400px] mx-auto
+                px-6 py-2 flex
+                justify-between items-center">
+
+        <div class="flex gap-8">
+
+            <span>
+                GOVERNMENT OF INDIA
+            </span>
+
+            <span>
+                MINISTRY OF RURAL DEVELOPMENT
+            </span>
+
+        </div>
+
+        <div>
+            Screen Reader Access
+            &nbsp; | &nbsp; 
+            A-
+            &nbsp;
+            A
+            &nbsp;
+            A+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="bg-white">
+
+    <div class="max-w-[1400px] mx-auto
+                px-10 py-3
+                flex items-center justify-between">
+
+        <div class="flex items-center gap-5">
+
+            <div class="text-5xl text-gray-700">
+                <i class="fa-solid fa-landmark"></i>
+            </div>
+
+            <div>
+
+                <div class="text-xs
+                            tracking-widest
+                            text-gray-500">
+
+                    DEPARTMENT OF LAND RESOURCES
+
+                </div>
+
+                <h1 class="text-2xl md:text-3xl
+                           font-bold text-[#09213a]">
+
+                    Integrated Land Record
+                    Digitization System
+
+                </h1>
+
+                <p class="text-sm
+                          text-teal-700
+                          font-medium">
+
+                    Automated Deed Verification &
+                    Cadastral Mapping Engine
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="flex items-center gap-5">
+
+            <div class="text-gray-400
+                        font-semibold">
+
+                Digital India
+
+            </div>
+
+            <div class="border
+                        border-emerald-300
+                        text-emerald-700
+                        px-4 py-2
+                        rounded text-xs">
+
+                SIH-26018 SECURED NODE
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="orange-line"></div>
+    <div class="green-line"></div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="bg-[#102b45] text-white">
+
+    <div class="max-w-[1400px] mx-auto
+                px-8 py-3
+                flex gap-8
+                text-sm font-medium">
+
+        <a href="index2.html"
+           class="hover:text-orange-300">
+
+            <i class="fa-solid fa-house mr-1"></i>
+            Home
+
+        </a>
+
+        <a href="records.html"
+           class="hover:text-orange-300">
+
+            <i class="fa-solid fa-database mr-1"></i>
+            Records
+
+        </a>
+        
+
+        <a href="verification.html"
+           class="hover:text-orange-300">
+           
+           <i class="fa-solid fa-verification mr-1"></i>
+            Verification
+           </a>
+           
+
+        <a href="calculator.html"
+           class="hover:text-orange-300">
+
+            <i class="fa-solid fa-calculator mr-1"></i>
+            Calculators
+
+        </a>
+
+        <a href="map.html"
+           class="hover:text-orange-300">
+
+            <i class="fa-solid fa-map mr-1"></i>
+            Cadastral Map
+
+        </a>
+
+        <a href="about.html"
+           class="hover:text-orange-300">
+
+            <i class="fa-solid fa-circle-info mr-1"></i>
+            About
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero-bg text-white">
+
+    <div class="max-w-[1400px] mx-auto
+                px-8 py-10">
+
+        <div class="flex flex-col
+                    lg:flex-row
+                    justify-between
+                    gap-8">
+
+            <div class="max-w-3xl">
+
+                <span class="inline-block
+                             bg-orange-500
+                             text-black
+                             text-xs
+                             font-bold
+                             px-3 py-1
+                             rounded">
+
+                    OFFICIAL VERIFICATION GATEWAY
+
+                </span>
+
+                <h2 class="text-3xl md:text-4xl
+                           font-bold mt-4">
+
+                    Smart Land Deed Ingestion &
+                    Integrity Auditing
+
+                </h2>
+
+                <p class="mt-3
+                          text-gray-100
+                          leading-7">
+
+                    Upload cadastral deeds, verify
+                    ownership parameters, detect
+                    spatial boundary anomalies,
+                    and generate cryptographic
+                    proof logs instantly.
+
+                </p>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="grid grid-cols-3 gap-3
+                        min-w-[370px]">
+
+                <div class="border
+                            border-white/30
+                            bg-white/10
+                            rounded p-4 text-center">
+
+                    <div class="text-xs
+                                text-gray-200">
+
+                        TOTAL RECORDS
+
+                    </div>
+
+                    <div id="statTotal"
+                         class="text-3xl
+                                font-bold mt-2">
+
+                        0
+
+                    </div>
+
+                </div>
+
+
+                <div class="border
+                            border-emerald-400/40
+                            bg-emerald-900/30
+                            rounded p-4 text-center">
+
+                    <div class="text-xs
+                                text-gray-200">
+
+                        VALIDATED
+
+                    </div>
+
+                    <div id="statValidated"
+                         class="text-3xl
+                                font-bold
+                                text-emerald-300 mt-2">
+
+                        0
+
+                    </div>
+
+                </div>
+
+
+                <div class="border
+                            border-rose-400/40
+                            bg-rose-900/30
+                            rounded p-4 text-center">
+
+                    <div class="text-xs
+                                text-gray-200">
+
+                        FLAGGED
+
+                    </div>
+
+                    <div id="statFlagged"
+                         class="text-3xl
+                                font-bold
+                                text-rose-300 mt-2">
+
+                        0
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="max-w-[1400px] mx-auto
+             px-8 py-8">
+
+    <div class="grid lg:grid-cols-12 gap-8">
+
+
+        <!-- =================================================
+             LEFT - UPLOAD
+        ================================================== -->
+
+        <section class="lg:col-span-4 card">
+
+            <div class="border-b
+                        px-5 py-4
+                        flex justify-between
+                        items-center">
+
+                <h3 class="font-bold
+                           text-[#09213a]">
+
+                    <i class="fa-solid
+                              fa-file-arrow-up
+                              text-teal-700 mr-2"></i>
+
+                    Ingest Cadastral Document
+
+                </h3>
+
+                <span class="bg-slate-100
+                             text-slate-600
+                             px-2 py-1
+                             rounded text-xs">
+
+                    FORM A-1
+
+                </span>
+
+            </div>
+
+
+            <form id="uploadForm"
+                  class="p-5">
+
+
+                <!-- FILE -->
+
+                <label class="block
+                              text-xs
+                              font-semibold
+                              text-[#173b60]
+                              mb-2">
+
+                    UPLOAD LAND DEED /
+                    ROR DOCUMENT
+                    <span class="text-red-500">*</span>
+
+                </label>
+
+
+                <input
+                    id="fileInput"
+                    type="file"
+                    accept=".pdf,.jpg,.jpeg,.png,.tif,.tiff"
+                    class="w-full
+                           border
+                           border-slate-300
+                           rounded
+                           px-3 py-2
+                           text-sm
+                           bg-slate-50">
+
+
+                <p class="text-[11px]
+                          text-slate-500
+                          mt-2">
+
+                    Supported formats:
+                    PDF, Scanned TIFF,
+                    High-Res Text/Image
+
+                </p>
+
+
+                <hr class="my-5">
+
+
+                <!-- OWNER -->
+
+                <label class="block
+                              text-xs
+                              font-semibold
+                              text-slate-600
+                              mb-1">
+
+                    Owner Full Name
+
+                </label>
+
+                <input
+                    id="manualOwner"
+                    type="text"
+                    placeholder="As per Aadhaar / Revenue registry"
+                    class="w-full
+                           border
+                           border-slate-300
+                           rounded
+                           px-3 py-2
+                           text-sm
+                           mb-4">
+
+
+                <!-- KHASRA -->
+
+                <label class="block
+                              text-xs
+                              font-semibold
+                              text-slate-600
+                              mb-1">
+
+                    Khasra / Survey No.
+
+                </label>
+
+                <input
+                    id="manualKhasra"
+                    type="text"
+                    placeholder="e.g. 125/3"
+                    class="w-full
+                           border
+                           border-slate-300
+                           rounded
+                           px-3 py-2
+                           text-sm
+                           mb-4">
+
+
+                <!-- AREA -->
+
+                <label class="block
+                              text-xs
+                              font-semibold
+                              text-slate-600
+                              mb-1">
+
+                    Total Area (Acres)
+
+                </label>
+
+                <input
+                    id="manualArea"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    placeholder="e.g. 2.50"
+                    class="w-full
+                           border
+                           border-slate-300
+                           rounded
+                           px-3 py-2
+                           text-sm
+                           mb-4">
+
+
+                <!-- VILLAGE -->
+
+                <label class="block
+                              text-xs
+                              font-semibold
+                              text-slate-600
+                              mb-1">
+
+                    Revenue Village
+
+                </label>
+
+                <input
+                    id="manualVillage"
+                    type="text"
+                    placeholder="Village name"
+                    class="w-full
+                           border
+                           border-slate-300
+                           rounded
+                           px-3 py-2
+                           text-sm
+                           mb-4">
+
+
+                <!-- DISTRICT -->
+
+                <label class="block
+                              text-xs
+                              font-semibold
+                              text-slate-600
+                              mb-1">
+
+                    District
+
+                </label>
+
+                <input
+                    id="manualDistrict"
+                    type="text"
+                    placeholder="District name"
+                    class="w-full
+                           border
+                           border-slate-300
+                           rounded
+                           px-3 py-2
+                           text-sm
+                           mb-5">
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    id="submitBtn"
+                    type="submit"
+                    class="w-full
+                           bg-[#0a2944]
+                           hover:bg-[#123d60]
+                           text-white
+                           font-semibold
+                           rounded
+                           py-3
+                           transition">
+
+                    <i class="fa-solid
+                              fa-magnifying-glass-chart
+                              mr-2"></i>
+
+                    Digitize & Validate Record
+
+                </button>
+
+
+                <p class="text-[11px]
+                          text-center
+                          text-slate-500
+                          mt-3">
+
+                    Document is processed by the
+                    BhoomiSetu validation engine.
+
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- =================================================
+             RIGHT - RECORDS
+        ================================================== -->
+
+        <section class="lg:col-span-8 card">
+
+            <div class="border-b
+                        px-5 py-4
+                        flex justify-between
+                        items-center">
+
+                <h3 class="font-bold
+                           text-[#09213a]">
+
+                    <i class="fa-solid
+                              fa-table-list
+                              text-teal-700 mr-2"></i>
+
+                    Authenticated Land Registry Ledger
+
+                </h3>
+
+
+                <button
+                    onclick="fetchRecords()"
+                    class="border
+                           border-slate-300
+                           rounded
+                           px-4 py-2
+                           text-sm
+                           hover:bg-slate-50">
+
+                    <i class="fa-solid
+                              fa-rotate
+                              mr-1"></i>
+
+                    Synchronize
+
+                </button>
+
+            </div>
+
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full
+                              text-sm">
+
+                    <thead class="bg-slate-100">
+
+                        <tr class="text-left
+                                   text-xs
+                                   text-slate-600">
+
+                            <th class="px-4 py-3">
+                                PARCEL IDENTITY
+                            </th>
+
+                            <th class="px-4 py-3">
+                                LOCATION
+                            </th>
+
+                            <th class="px-4 py-3">
+                                DECLARED AREA
+                            </th>
+
+                            <th class="px-4 py-3">
+                                SHA-256 LEDGER HASH
+                            </th>
+
+                            <th class="px-4 py-3">
+                                VALIDATION STATUS
+                            </th>
+
+                            <th class="px-4 py-3">
+                                ACTION
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="recordsTableBody">
+
+                        <tr>
+
+                            <td colspan="6"
+                                class="text-center
+                                       py-12
+                                       text-slate-400">
+
+                                Loading records...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         INFORMATION
+    ====================================================== -->
+
+    <section class="mt-8
+                    grid md:grid-cols-3
+                    gap-5">
+
+        <div class="card p-5">
+
+            <div class="text-teal-700
+                        text-2xl mb-3">
+
+                <i class="fa-solid fa-file-shield"></i>
+
+            </div>
+
+            <h3 class="font-bold
+                       text-[#09213a]">
+
+                Document Digitization
+
+            </h3>
+
+            <p class="text-sm
+                      text-slate-600
+                      mt-2">
+
+                Scanned land documents can be
+                processed and relevant fields
+                can be extracted using OCR.
+
+            </p>
+
+        </div>
+
+
+        <div class="card p-5">
+
+            <div class="text-emerald-700
+                        text-2xl mb-3">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <h3 class="font-bold
+                       text-[#09213a]">
+
+                Automated Validation
+
+            </h3>
+
+            <p class="text-sm
+                      text-slate-600
+                      mt-2">
+
+                Required land-record fields and
+                duplicate documents are checked
+                before a record is validated.
+
+            </p>
+
+        </div>
+
+
+        <div class="card p-5">
+
+            <div class="text-blue-700
+                        text-2xl mb-3">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+            </div>
+
+            <h3 class="font-bold
+                       text-[#09213a]">
+
+                Cryptographic Integrity
+
+            </h3>
+
+            <p class="text-sm
+                      text-slate-600
+                      mt-2">
+
+                SHA-256 hashing provides a unique
+                digital fingerprint for uploaded
+                documents.
+
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="gov-blue text-white mt-10">
+
+    <div class="max-w-[1400px] mx-auto
+                px-8 py-6
+                text-center text-sm">
+
+        <p>
+            Intelligent Land Record Digitization System
+        </p>
+
+        <p class="text-slate-400
+                  text-xs mt-2">
+
+            BhoomiSetu Prototype |
+            Secure Land Record Verification
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const API_BASE = "http://127.0.0.1:8000";
+
+
+// =====================================================
+// ESCAPE HTML
+// =====================================================
+
+function escapeHtml(value) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+        return "";
+    }
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+
+// =====================================================
+// FETCH RECORDS
+// =====================================================
+
+async function fetchRecords() {
+
+    try {
+
+        const response = await fetch(
+            `${API_BASE}/api/records`
+        );
+
+        if (!response.ok) {
+
+            throw new Error(
+                `HTTP ${response.status}`
+            );
+
+        }
+
+        const data = await response.json();
+
+        renderRecords(
+            data.records || []
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Backend error:",
+            error
+        );
+
+        document.getElementById(
+            "recordsTableBody"
+        ).innerHTML = `
+
+            <tr>
+
+                <td colspan="6"
+                    class="text-center
+                           py-10
+                           text-red-500">
+
+                    <i class="fa-solid
+                              fa-circle-exclamation
+                              mr-2"></i>
+
+                    Backend connection failed.
+                    Please start the FastAPI server.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+// =====================================================
+// RENDER RECORDS
+// =====================================================
+
+function renderRecords(records) {
+
+    const tbody =
+        document.getElementById(
+            "recordsTableBody"
+        );
+
+
+    tbody.innerHTML = "";
+
+
+    let validated = 0;
+    let flagged = 0;
+
+
+    if (records.length === 0) {
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td colspan="6"
+                    class="text-center
+                           py-12
+                           text-slate-400">
+
+                    No land records logged yet.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+
+    records.forEach(record => {
+
+        if (
+            record.status === "VALIDATED"
+        ) {
+
+            validated++;
+
+        } else {
+
+            flagged++;
+
+        }
+
+
+        const isValid =
+            record.status === "VALIDATED";
+
+
+        const badge = isValid
+
+            ?
+
+            `
+            <span class="inline-flex
+                         items-center
+                         bg-emerald-100
+                         text-emerald-700
+                         border
+                         border-emerald-300
+                         px-2 py-1
+                         rounded
+                         text-xs
+                         font-bold">
+
+                <i class="fa-solid
+                          fa-circle-check
+                          mr-1"></i>
+
+                VALIDATED
+
+            </span>
+            `
+
+            :
+
+            `
+            <span class="inline-flex
+                         items-center
+                         bg-rose-100
+                         text-rose-700
+                         border
+                         border-rose-300
+                         px-2 py-1
+                         rounded
+                         text-xs
+                         font-bold">
+
+                <i class="fa-solid
+                          fa-triangle-exclamation
+                          mr-1"></i>
+
+                FLAGGED
+
+            </span>
+            `;
+
+
+        const errors =
+            record.validation_errors || [];
+
+
+        const errorText =
+            errors.length
+            ?
+            `
+            <div class="text-[10px]
+                        text-rose-600
+                        mt-1">
+
+                ${escapeHtml(errors[0])}
+
+            </div>
+            `
+            :
+            "";
+
+
+        const row =
+            document.createElement("tr");
+
+
+        row.className =
+            "border-b hover:bg-slate-50";
+
+
+        row.innerHTML = `
+
+            <td class="px-4 py-4">
+
+                <div class="font-bold
+                            text-[#09213a]">
+
+                    ${escapeHtml(
+                        record.owner_name
+                    )}
+
+                </div>
+
+                <div class="text-xs
+                            text-slate-500">
+
+                    Khasra:
+                    ${escapeHtml(
+                        record.khasra_no
+                    )}
+
+                </div>
+
+            </td>
+
+
+            <td class="px-4 py-4">
+
+                <div>
+                    ${escapeHtml(
+                        record.village
+                    )}
+                </div>
+
+                <div class="text-xs
+                            text-slate-500">
+
+                    ${escapeHtml(
+                        record.district
+                    )}
+
+                </div>
+
+            </td>
+
+
+            <td class="px-4 py-4
+                       font-semibold">
+
+                ${escapeHtml(
+                    record.area_acres
+                )}
+
+                Acres
+
+            </td>
+
+
+            <td class="px-4 py-4">
+
+                <div class="font-mono
+                            text-[10px]
+                            text-slate-500
+                            max-w-[170px]
+                            break-all">
+
+                    ${escapeHtml(
+                        record.sha256 ||
+                        record.hash ||
+                        "-"
+                    )}
+
+                </div>
+
+            </td>
+
+
+            <td class="px-4 py-4">
+
+                ${badge}
+
+                ${errorText}
+
+            </td>
+
+
+            <td class="px-4 py-4">
+
+                <button
+                    onclick="viewRecord(${record.id})"
+                    class="text-blue-700
+                           font-semibold
+                           hover:underline">
+
+                    View
+
+                </button>
+
+            </td>
+
+        `;
+
+
+        tbody.appendChild(row);
+
+    });
+
+
+    document.getElementById(
+        "statTotal"
+    ).textContent = records.length;
+
+
+    document.getElementById(
+        "statValidated"
+    ).textContent = validated;
+
+
+    document.getElementById(
+        "statFlagged"
+    ).textContent = flagged;
+
+}
+
+
+// =====================================================
+// VIEW RECORD
+// =====================================================
+
+async function viewRecord(id) {
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_BASE}/api/records/${id}`
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Record not found"
+            );
+
+        }
+
+
+        const record =
+            await response.json();
+
+
+        let message =
+
+            "LAND RECORD DETAILS\n\n" +
+
+            "Owner: " +
+            record.owner_name +
+
+            "\nKhasra: " +
+            record.khasra_no +
+
+            "\nArea: " +
+            record.area_acres +
+            " Acres" +
+
+            "\nVillage: " +
+            record.village +
+
+            "\nDistrict: " +
+            record.district +
+
+            "\nStatus: " +
+            record.status;
+
+
+        if (
+            record.validation_errors &&
+            record.validation_errors.length
+        ) {
+
+            message +=
+
+                "\n\nValidation Issues:\n" +
+
+                record.validation_errors.join(
+                    "\n"
+                );
+
+        }
+
+
+        alert(message);
+
+    }
+
+    catch (error) {
+
+        alert(
+            "Unable to load record."
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// UPLOAD + DIGITIZE + VALIDATE
+// =====================================================
+
+document
+.getElementById("uploadForm")
+.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const fileInput =
+            document.getElementById(
+                "fileInput"
+            );
+
+
+        const file =
+            fileInput.files[0];
+
+
+        if (!file) {
+
+            alert(
+                "Please select a land record document."
+            );
+
+            return;
+
+        }
+
+
+        const submitBtn =
+            document.getElementById(
+                "submitBtn"
+            );
+
+
+        submitBtn.disabled = true;
+
+
+        submitBtn.innerHTML = `
+
+            <i class="fa-solid
+                      fa-spinner
+                      fa-spin
+                      mr-2"></i>
+
+            Processing...
+
+        `;
+
+
+        try {
+
+            const formData =
+                new FormData();
+
+
+            formData.append(
+                "file",
+                file
+            );
+
+
+            formData.append(
+                "owner_name",
+                document.getElementById(
+                    "manualOwner"
+                ).value
+            );
+
+
+            formData.append(
+                "khasra_no",
+                document.getElementById(
+                    "manualKhasra"
+                ).value
+            );
+
+
+            formData.append(
+                "area_acres",
+                document.getElementById(
+                    "manualArea"
+                ).value || "0"
+            );
+
+
+            formData.append(
+                "village",
+                document.getElementById(
+                    "manualVillage"
+                ).value
+            );
+
+
+            formData.append(
+                "district",
+                document.getElementById(
+                    "manualDistrict"
+                ).value
+            );
+
+
+            formData.append(
+                "state",
+                ""
+            );
+
+
+            const response =
+                await fetch(
+                    `${API_BASE}/api/digitize-and-validate`,
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+
+            const result =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    result.detail ||
+                    "Backend processing failed"
+                );
+
+            }
+
+
+            if (
+                result.status ===
+                "VALIDATED"
+            ) {
+
+                alert(
+
+                    "✓ RECORD VALIDATED\n\n" +
+
+                    "Owner: " +
+                    result.owner_name +
+
+                    "\nKhasra: " +
+                    result.khasra_no +
+
+                    "\nArea: " +
+                    result.area_acres +
+                    " Acres" +
+
+                    "\nVillage: " +
+                    result.village +
+
+                    "\nDistrict: " +
+                    result.district
+
+                );
+
+            }
+
+            else {
+
+                alert(
+
+                    "⚠ RECORD FLAGGED\n\n" +
+
+                    (
+                        result.validation_errors ||
+                        []
+                    ).join("\n")
+
+                );
+
+            }
+
+
+            await fetchRecords();
+
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+
+            alert(
+
+                "Backend connection/processing failed.\n\n" +
+                error.message
+
+            );
+
+        }
+
+
+        finally {
+
+            submitBtn.disabled = false;
+
+
+            submitBtn.innerHTML = `
+
+                <i class="fa-solid
+                          fa-magnifying-glass-chart
+                          mr-2"></i>
+
+                Digitize & Validate Record
+
+            `;
+
+        }
+
+    }
+);
+
+
+// =====================================================
+// INITIAL LOAD
+// =====================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        fetchRecords();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
